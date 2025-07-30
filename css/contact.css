@@ -1,0 +1,99 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: whitesmoke;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.container {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 3rem;
+  border-radius: 10px;
+}
+
+.head {
+  text-align: center;
+  margin-bottom: 5px;
+}
+h2 {
+  margin-bottom: 10px;
+  color: #234062;
+}
+
+.p1 {
+  color: #5f606e;
+  margin: 10px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  padding: 0.7rem;
+  margin: 7px;
+  border: 1px solid #cdcdcd;
+  border-radius: 5px;
+}
+.smt {
+  background-color: #2d3e50;
+  color: white;
+  border-radius: 5px;
+}
+
+.comm {
+  padding-bottom: 1.3rem;
+  padding-right: 1.3rem;
+  padding-top: 1.3rem;
+  padding-left: 0.7rem;
+  margin: 7px;
+  border-radius: 5px;
+  border: 1px solid #cdcdcd;
+}
+
+.input::placeholder {
+  color: #234062;
+}
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 10px;
+}
+.con-address {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1em;
+  margin-top: 10px;
+}
+
+.con-socials {
+  display: flex;
+  column-gap: 3em;
+}
+
+.con {
+  color: #5f606e;
+}
+
+span {
+  font-weight: bold;
+  color: #505654;
+}
+
+.fab {
+  font-weight: bold;
+  font-size: larger;
+  color: #2d3e50;
+}
