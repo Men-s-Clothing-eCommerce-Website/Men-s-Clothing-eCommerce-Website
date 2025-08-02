@@ -1,69 +1,54 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>All Products - Men's Clothing eCommerce</title>
-    <link rel="stylesheet" href="../css/all-products.css">
+    <link rel="stylesheet" href="../css/all-products.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="logo">Nomad Fits</div>
 
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="all-products.html">Shop</a>
+        <a href="about.html">about Us</a>
+        <a href="contact.html">Contact Us</a>
+      </nav>
+    </header>
 
-</head>
-<body>
-  <header class="navbar">
-    <div class="logo">Nomad Fits</div>
-    
+    <section class="hero">
+      <h1>Shop Collection</h1>
+      <p>Explore our wide range of men's clothing.</p>
+    </section>
 
-    <nav class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="all-products.html">ShopNow</a>
-      <a href="about.html">about Us</a>
-      <a href="contact.html">Contact Us</a>
-    
-  
-    </nav>
-  </header>
+    <div class="filtering">
+      <select id="filter">
+        <option value="">All Categories</option>
+        <option value="shirts">Shirts</option>
+        <option value="jackets">Jackets</option>
+        <option value="accessories">Accessories</option>
+        <option value="shoes">Shoes</option>
+        <option value="pants">Pants</option>
+      </select>
 
+      <select id="featured">
+        <option value="">Featured</option>
+        <option value="new">New Arrivals</option>
+        <option value="best">Bestsellers</option>
+        <option value="sale">On Sale</option>
+      </select>
 
+      <select id="filters">
+        <option value="">Filters</option>
+        <option value="low">Price: Low to High</option>
+        <option value="high">Price: High to Low</option>
+      </select>
+    </div>
 
+    <div class="cards"></div>
 
-
-
-     <section class="hero">
-    <h1>Shop Collection</h1>
-    <p>Explore our wide range of men's clothing.</p>
-  </section>
-
-
-
-  <div class="filtering">
-  <select id="filter">
-  <option value="">All Categories</option>
-  <option value="shirts">Shirts</option>
-  <option value="jackets">Jackets</option>
-  <option value="accessories">Accessories</option>
-  <option value="shoes">Shoes</option>
-  <option value="pants">Pants</option>
-</select>
-
-  <select id="featured">
-    <option value="">Featured</option>
-    <option value="new">New Arrivals</option>
-    <option value="best">Bestsellers</option>
-    <option value="sale">On Sale</option>
-  </select>
-
-  <select id="filters">
-    <option value="">Filters</option>
-    <option value="low">Price: Low to High</option>
-    <option value="high">Price: High to Low</option>
-  </select>
-</div>
-
-<div class="cards"></div>
-
-
-
-       
-   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="../js/all-products.js"></script>
-</body>
+  </body>
 </html>
