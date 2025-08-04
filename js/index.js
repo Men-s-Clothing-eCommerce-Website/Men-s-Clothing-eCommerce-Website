@@ -1,8 +1,7 @@
-// Fetch categories from the API
 function fetchCategoriesData() {
   return axios.get("https://api.escuelajs.co/api/v1/categories")
     .then(response => {
-      const categories = response.data.slice(0, 4);  // limit to 6 categories
+      const categories = response.data.slice(0, 4);  
       console.log("Categories:", categories);
       return categories;
     })
@@ -12,7 +11,7 @@ function fetchCategoriesData() {
     });
 }
 
-// Create a single category card
+
 function createCategoryCard(category) {
   const card = document.createElement("div");
   card.className = "category-card";
@@ -29,7 +28,7 @@ function createCategoryCard(category) {
   return card;
 }
 
-// Display categories in the DOM
+
 function displayCategories() {
   const container = document.querySelector(".Categories");
   if (!container) {
@@ -45,7 +44,6 @@ function displayCategories() {
   });
 }
 
-// Call the display function
 displayCategories();
 
 
