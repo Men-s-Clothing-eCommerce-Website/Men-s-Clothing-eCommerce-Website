@@ -15,8 +15,13 @@ function createCard(product) {
   const card = document.createElement("div");
   card.className = "card";
 
+  card.addEventListener("click", () => {
+  location.assign(`products-details.html?id=${product.id}`);
+});
+
+
   const img = document.createElement("img");
-  img.src = product.images[0] || '';
+  img.src = product.images[0] || product.images[1] ; 
   img.alt = product.title;
   card.appendChild(img);
 
@@ -36,23 +41,6 @@ function createCard(product) {
 }
 
 
-/*function fetchCategoriesData() {
-  return axios.get("https://api.escuelajs.co/api/v1/categories")
-    .then(response => {
-      console.log("Categories:", response.data);
-      return response.data;
-    })
-    .catch(error => {
-      console.error("Categories fetch error:", error);
-      return [];
-    });
-}
-*/
-
-
-
-
-
 
 
 function displayAllProducts() {
@@ -60,10 +48,27 @@ function displayAllProducts() {
   cardsContainer.innerHTML = "";
 
   fetchProductData().then((products) => {
-    products.forEach((product) => {
-      cardsContainer.append(createCard(product));  
-    });
+    const cards = products.map(product => createCard(product));
+    cardsContainer.append(...cards);
   });
 }
 
 displayAllProducts();
+
+
+ /*document.getElementById("Categories")
+ document.getElementById("featured")
+ document.getElementById("Price")
+
+ function filteringCategories =  (products) { 
+
+ const products = fetchProductData.filter((Categories) => {
+
+  if (Categories.toLowerCase() === "products") {
+    else 
+  }
+
+ })
+
+ }
+ */
