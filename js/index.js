@@ -1,5 +1,5 @@
 function fetchCategoriesData() {
-  return axios.get("https://api.escuelajs.co/api/v1/categories")
+  return axios.get('https://fakestoreapi.com/products')
     .then(response => {
       const categories = response.data.slice(0, 4);  
       console.log("Categories:", categories);
@@ -48,12 +48,18 @@ displayCategories();
 
 
 
+
+
+
+
+
+
 function fetchProductData() {
-  return axios.get("https://api.escuelajs.co/api/v1/products")
+   return axios.get('https://fakestoreapi.com/products')
     .then(response => {
-      const products = response.data.slice(0, 6);  
-      console.log("Products:", products);
-      return products;
+      const categories = response.data.slice(0,6);  
+      console.log("Categories:", categories);
+      return categories;
     })
     .catch(error => {
       console.error("Fetch error:", error);
@@ -61,18 +67,16 @@ function fetchProductData() {
     });
 }
 
-
 function createCard(product) {
   const card = document.createElement("div");
   card.className = "card";
 
   card.addEventListener("click", () => {
-  location.assign(`products-details.html?id=${product.id}`);
-});
-
+    location.assign(`product-details.html?id=${product.id}`);
+  });
 
   const img = document.createElement("img");
-  img.src = product.images[0] || '';
+  img.src = product.image || '';
   img.alt = product.title;
   card.appendChild(img);
 
@@ -85,11 +89,12 @@ function createCard(product) {
   card.appendChild(price);
 
   const rating = document.createElement("p");
-  rating.textContent = `Rating:`;
+  rating.textContent = `Rating: ${product.rating?.rate || 'N/A'}`;
   card.appendChild(rating);
 
   return card;
 }
+
 
 
 

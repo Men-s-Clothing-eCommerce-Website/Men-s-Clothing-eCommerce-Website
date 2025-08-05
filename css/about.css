@@ -46,3 +46,151 @@ body {
 .nav-links a:hover {
   color: #007bff;
 }
+
+
+
+
+
+
+
+
+.section {
+  width: 100%;
+  background-color: white;
+  padding: 60px 0;
+  overflow: hidden;
+}
+
+.container {
+  width: 85%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: center;
+}
+
+.content-section {
+  flex: 1 1 55%;
+}
+
+.image-section {
+  flex: 1 1 40%;
+}
+
+.image-section img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.title h1 {
+  text-transform: uppercase;
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.content h3 {
+  font-size: 22px;
+  margin-top: 20px;
+  color: #5d5d5d;
+}
+
+.content p {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 18px;
+  margin-top: 12px;
+  line-height: 1.6rem;
+  color: #444;
+}
+
+
+
+
+
+/* ========== TEAM SECTION ========== */
+.team-section {
+  width: 100%;
+  background-color: white;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.team-section h1 {
+  font-size: 32px;
+  margin-bottom: 40px;
+  font-weight: 700;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.team-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.group-member {
+  background-color: white;
+  padding: 20px;
+  max-width: 280px;
+  border-radius: 16px;
+  text-align: center;
+}
+
+.group-member img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  object-fit: cover;
+  background-color: #ccc;
+  border: 3px solid #ddd;
+}
+
+.group-member h3 {
+  font-size: 22px;
+  margin: 10px 0 6px;
+  font-weight: bold;
+  color: #333;
+}
+
+.group-member h5 {
+  font-size: 14px;
+  margin: 0;
+  font-weight: bold;
+  color: #777;
+}
+
+.group-member p {
+  font-size: 15px;
+  margin-top: 12px;
+  line-height: 1.5rem;
+  color: #555;
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .content-section,
+  .image-section {
+    flex: 1 1 100%;
+  }
+
+  .team-grid {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .group-member {
+    width: 90%;
+    max-width: 100%;
+  }
+}

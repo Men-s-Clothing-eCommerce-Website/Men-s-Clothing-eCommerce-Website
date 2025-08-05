@@ -1,5 +1,5 @@
 function fetchProductData() {
-  return axios.get("https://api.escuelajs.co/api/v1/products")
+  return axios.get('https://fakestoreapi.com/products')
     .then(response => {
       console.log("Products:", response.data);
       return response.data;
@@ -16,12 +16,11 @@ function createCard(product) {
   card.className = "card";
 
   card.addEventListener("click", () => {
-  location.assign(`products-details.html?id=${product.id}`);
-});
-
+    location.assign(`product-details.html?id=${product.id}`);
+  });
 
   const img = document.createElement("img");
-  img.src = product.images[0] || product.images[1] ; 
+  img.src = product.image || '';
   img.alt = product.title;
   card.appendChild(img);
 
@@ -34,11 +33,12 @@ function createCard(product) {
   card.appendChild(price);
 
   const rating = document.createElement("p");
-  rating.textContent = `Rating:`;
+  rating.textContent = `Rating: ${product.rating?.rate || 'N/A'}`;
   card.appendChild(rating);
 
   return card;
 }
+
 
 
 
