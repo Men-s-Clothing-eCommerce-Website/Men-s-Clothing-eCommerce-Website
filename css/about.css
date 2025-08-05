@@ -46,3 +46,181 @@ body {
 .nav-links a:hover {
   color: #007bff;
 }
+
+
+.section{
+  width: 100%;
+  background-color:#ddd ;
+
+}
+.container{
+  width:80% ;
+  display: block;
+  margin: 0 auto;
+  padding: top 100px; 
+
+
+
+
+
+}
+.content-section{
+  float: left;
+  width: 55%
+
+}
+
+.image-section{
+  float: right;
+  width: 40%;
+
+  
+}
+.image-section img{
+  width: 100%;
+  height: auto;
+
+
+
+}
+.content-section.title{
+  text-transform:uppercase;
+  font-size:28px;
+
+
+
+}
+.content-section.conten h3{
+  margin-top:20px;
+  color: #5d5d5d; ;
+  font-size: 22px;
+
+
+
+
+}
+
+.content-section.conten p{
+  margin-top: 11px;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20px;
+  line-height: 1.6rem;
+
+
+}
+
+.team-section{
+  width: 100px;
+  background-color:#ddd ;
+  text-align: center;
+  padding: 60px 20px;
+  
+
+}
+.group-member{
+  display: block;
+  width: 80%;
+  margin: 0 auto;
+  
+}
+.group-section{
+  display: flex;
+  width: 100%;
+  background-color: #5d5d5d;
+  padding: 40px;
+  text-align: center;
+}
+
+.group-section h1{
+  font-size: 32px;
+  margin: 40px;
+  font-weight: 700;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+
+
+
+
+
+}
+
+.group-member{
+  width: 80%;
+  display: flex;
+  border: radius 16px; 
+  padding: 20px;
+  max-width: 300px;
+  margin: 20px;
+  text-align: center;
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap: 40px;
+  
+
+
+
+}
+.group-member{
+  max-width:220px ;
+  text-align: center;
+
+}
+
+.group-member img{
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  object-fit: cover;
+  background-color: #5d5d5d;
+  border: 3px solid #ddd
+
+
+}
+
+
+.group-member h3{
+  font-size: 24px;
+  margin: 10px 0px 8px;
+  font-weight: bold;
+  text-align: center;
+
+
+
+
+}
+
+
+.group-member h5{
+  font-size: 14px;
+  margin: 0;
+  font-weight: bold;
+  flex-direction: column;
+  margin-top: 10px;
+
+
+
+}
+
+
+.group-member p{ 
+
+  font-size: 15px;
+  margin: top 16px; ;
+  display: flex;
+  line-height: 1.6rem;
+  gap: 1rem;
+
+}
+
+
+.group-section{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:center;
+  align-items: center;
+
+
+}
+
