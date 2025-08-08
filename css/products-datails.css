@@ -38,3 +38,82 @@ body {
 .nav-links a:hover {
   color: #007bff;
 }
+
+
+.container {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.product-gallery img {
+  width: 400px;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.product-gallery img:hover {
+  transform: scale(1.1);
+}
+
+.product-info {
+  max-width: 400px;
+}
+
+.eco {
+  color: green;
+  font-weight: bold;
+}
+
+.size-selector {
+  margin: 20px 0;
+}
+
+#add-to-cart {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#add-to-cart:hover {
+  background-color: #0056b3;
+}
+
+#confirmation {
+  margin-top: 10px;
+  color: green;
+  font-weight: bold;
+  animation: fade 2s forwards;
+}
+
+.hidden {
+  display: none;
+}
+
+.reviews {
+  max-width: 800px;
+  margin-top: 40px;
+}
+
+.review {
+  background: white;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+}
+
+@keyframes fade {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+
