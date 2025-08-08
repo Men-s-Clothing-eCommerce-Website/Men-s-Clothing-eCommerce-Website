@@ -16,7 +16,7 @@ function createCard(product) {
   card.className = "card";
 
   card.addEventListener("click", () => {
-    location.assign(`product-details.html?id=${product.id}`);
+    location.assign(`products-details.html?id=${product.id}`);
   });
 
   const img = document.createElement("img");
@@ -32,6 +32,12 @@ function createCard(product) {
   price.textContent = `$${product.price.toFixed(2)}`;
   card.appendChild(price);
 
+const description = document.createElement("p");
+description.className = "description";  // <-- THIS IS IMPORTANT
+description.textContent = product.description;
+card.appendChild(description);
+
+
   const rating = document.createElement("p");
   rating.textContent = `Rating: ${product.rating?.rate || 'N/A'}`;
   card.appendChild(rating);
@@ -43,32 +49,31 @@ function createCard(product) {
 
 
 
-function displayAllProducts() {
-  const cardsContainer = document.querySelector(".cards");
-  cardsContainer.innerHTML = "";
+ function displayAllProducts(filterCategory = "all") {
+      const cardsContainer = document.querySelector(".cards");
+      cardsContainer.innerHTML = "";
 
-  fetchProductData().then((products) => {
-    const cards = products.map(product => createCard(product));
-    cardsContainer.append(...cards);
-  });
-}
+      fetchProductData().then(products => {
+        const filtered = products.filter(p => filterCategory === "all" || p.category === filterCategory);
+        cardsContainer.append(...filtered.map(createCard));
+      });
+    }
 
-displayAllProducts();
+    function filteringCategories() {
+      const categoryMake = document.getElementById("Categories");
 
+      fetchProductData().then(products => {
+        const uniqueCategories = [...new Set(products.map(p => p.category))];
+        uniqueCategories.forEach(category => {
+          const option = document.createElement("option");
+          option.value = category;
+          option.textContent = category;
+          categoryMake.appendChild(option);
+        });
+      });
 
- /*document.getElementById("Categories")
- document.getElementById("featured")
- document.getElementById("Price")
+      categoryMake.addEventListener("change", e => displayAllProducts(e.target.value));
+    }
 
- function filteringCategories =  (products) { 
-
- const products = fetchProductData.filter((Categories) => {
-
-  if (Categories.toLowerCase() === "products") {
-    else 
-  }
-
- })
-
- }
- */
+    displayAllProducts();
+    filteringCategories();
