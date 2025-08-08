@@ -72,7 +72,7 @@ function createCard(product) {
   card.className = "card";
 
   card.addEventListener("click", () => {
-    location.assign(`product-details.html?id=${product.id}`);
+    location.assign(`products-details.html?id=${product.id}`);
   });
 
   const img = document.createElement("img");
