@@ -1,11 +1,25 @@
-body {
+* {
   margin: 0;
-  font-family: 'Inter', sans-serif;
-  background-color: #fff;
-  color: #333;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0 auto;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+}
+
+
+
+/* Navbar */
 .navbar {
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -13,9 +27,6 @@ body {
   padding: 1rem 2rem;
   background-color: #fff;
   border-bottom: 1px solid #ddd;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
 }
 
 .logo {
@@ -41,4 +52,89 @@ body {
 
 
 
+/* fuctionka cardka */
 
+.container {
+ 
+  border-radius: 8px;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  border: none;
+
+}
+
+.product-image img {
+  width: 400px;
+  height: 500px;
+}
+
+.productdetailsdiv {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+   width: 500px;
+}
+
+
+.productdetailsdiv  h2 {
+  font-size: 2rem;
+}
+
+.product-price {
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+
+
+.product-description {
+  color: #696b69
+
+}
+
+
+.quantity h3 {
+  margin-bottom: 10px;
+  gap: 2px;
+}
+
+.numberdiv {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px; 
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 3px 2px;
+  background-color: white;
+  height: 30px;
+  margin-bottom: 10px;
+  
+}
+
+.numberdiv button {
+  background-color: transparent;
+  color: black);
+  border: none;
+  padding: 6px 8px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+
+
+.numberdiv span {
+  font-size: 16px;
+  text-align: center;
+  font-weight: bold;
+}
+
+
+#add-to-cart-btn {
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  padding: 3px 2px;
+  width: 500px;
+  height: 30px;
+}
