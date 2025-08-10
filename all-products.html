@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <title>All Products - Men's Clothing eCommerce</title>
-    <link rel="stylesheet" href="../css/all-products.css" />
+    <link rel="stylesheet" href="css/all-products.css" />
   </head>
   <body>
     <header class="navbar">
@@ -11,8 +11,8 @@
 
       <nav class="nav-links">
         <a href="index.html">Home</a>
-        <a href="all-products.html">Shop</a>
-        <a href="about.html">about Us</a>
+        <a href="all-products.html">Shop Now</a>
+        <a href="about.html">About Us</a>
         <a href="contact.html">Contact Us</a>
       </nav>
     </header>
@@ -23,13 +23,14 @@
     </section>
 
     <div class="filtering">
-      <select id="filter">
-        <option value="">All Categories</option>
-        <option value="shirts">Shirts</option>
+      <select id="Categories">
+        <option value="all">All Categories</option>
+        <!--<option value="shirts">Shirts</option>
         <option value="jackets">Jackets</option>
         <option value="accessories">Accessories</option>
         <option value="shoes">Shoes</option>
         <option value="pants">Pants</option>
+        -->
       </select>
 
       <select id="featured">
@@ -39,7 +40,7 @@
         <option value="sale">On Sale</option>
       </select>
 
-      <select id="filters">
+      <select id="Price">
         <option value="">Filters</option>
         <option value="low">Price: Low to High</option>
         <option value="high">Price: High to Low</option>
@@ -49,6 +50,6 @@
     <div class="cards"></div>
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="../js/all-products.js"></script>
+    <script src="js/all-products.js"></script>
   </body>
 </html>

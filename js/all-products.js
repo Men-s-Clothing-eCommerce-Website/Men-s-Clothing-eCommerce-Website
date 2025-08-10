@@ -1,5 +1,5 @@
 function fetchProductData() {
-  return axios.get("https://api.escuelajs.co/api/v1/products")
+  return axios.get('https://fakestoreapi.com/products')
     .then(response => {
       console.log("Products:", response.data);
       return response.data;
@@ -15,8 +15,12 @@ function createCard(product) {
   const card = document.createElement("div");
   card.className = "card";
 
+  card.addEventListener("click", () => {
+    location.assign(`products-details.html?id=${product.id}`);
+  });
+
   const img = document.createElement("img");
-  img.src = product.images[0] || '';
+  img.src = product.image || '';
   img.alt = product.title;
   card.appendChild(img);
 
@@ -28,42 +32,48 @@ function createCard(product) {
   price.textContent = `$${product.price.toFixed(2)}`;
   card.appendChild(price);
 
+const description = document.createElement("p");
+description.className = "description";  // <-- THIS IS IMPORTANT
+description.textContent = product.description;
+card.appendChild(description);
+
+
   const rating = document.createElement("p");
-  rating.textContent = `Rating:`;
+  rating.textContent = `Rating: ${product.rating?.rate || 'N/A'}`;
   card.appendChild(rating);
 
   return card;
 }
 
 
-/*function fetchCategoriesData() {
-  return axios.get("https://api.escuelajs.co/api/v1/categories")
-    .then(response => {
-      console.log("Categories:", response.data);
-      return response.data;
-    })
-    .catch(error => {
-      console.error("Categories fetch error:", error);
-      return [];
-    });
-}
-*/
 
 
 
+ function displayAllProducts(filterCategory = "all") {
+      const cardsContainer = document.querySelector(".cards");
+      cardsContainer.innerHTML = "";
 
+      fetchProductData().then(products => {
+        const filtered = products.filter(p => filterCategory === "all" || p.category === filterCategory);
+        cardsContainer.append(...filtered.map(createCard));
+      });
+    }
 
+    function filteringCategories() {
+      const categoryMake = document.getElementById("Categories");
 
+      fetchProductData().then(products => {
+        const uniqueCategories = [...new Set(products.map(p => p.category))];
+        uniqueCategories.forEach(category => {
+          const option = document.createElement("option");
+          option.value = category;
+          option.textContent = category;
+          categoryMake.appendChild(option);
+        });
+      });
 
-function displayAllProducts() {
-  const cardsContainer = document.querySelector(".cards");
-  cardsContainer.innerHTML = "";
+      categoryMake.addEventListener("change", e => displayAllProducts(e.target.value));
+    }
 
-  fetchProductData().then((products) => {
-    products.forEach((product) => {
-      cardsContainer.append(createCard(product));  
-    });
-  });
-}
-
-displayAllProducts();
+    displayAllProducts();
+    filteringCategories();

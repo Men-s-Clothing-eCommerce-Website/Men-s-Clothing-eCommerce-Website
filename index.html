@@ -12,9 +12,8 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
     />
-    <link rel="stylesheet" href="/css/index.css" />
+    <link rel="stylesheet" href="css/index.css" />
     <title>Nomad Fits</title>
-    <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -28,8 +27,8 @@
 
       <nav class="nav-links">
         <a href="index.html">Home</a>
-        <a href="all-products.html">Shop</a>
-        <a href="about.html">about Us</a>
+        <a href="all-products.html">Shop Now</a>
+        <a href="about.html">About Us</a>
         <a href="contact.html">Contact Us</a>
       </nav>
     </header>
@@ -42,13 +41,61 @@
           Modern Man
         </p>
         <div class="hero-buttons">
-          <button>Shop Now</button>
+     <a href="all-products.html">
+        <button>Shop Now</button></a>
           <button class="secondary">Explore Collections</button>
         </div>
       </div>
     </section>
 
-    <section class="collections">
+
+
+
+
+
+    <div class="test">
+   
+      <h1>Categories </h1>
+    </div>
+   <div class="Categories"></div>
+
+
+
+
+
+
+   
+ <div class="filtering">
+  <h1>Trending products</h1>
+      <select id="Categories">
+        <option value="">All Categories</option>
+        <option value="shirts">Shirts</option>
+        <option value="jackets">Jackets</option>
+        <option value="accessories">Accessories</option>
+        <option value="shoes">Shoes</option>
+        <option value="pants">Pants</option>
+      </select>
+
+      <select id="featured">
+        <option value="">Featured</option>
+        <option value="new">New Arrivals</option>
+        <option value="best">Bestsellers</option>
+        <option value="sale">On Sale</option>
+      </select>
+
+      <select id="Price">
+        <option value="">Filters</option>
+        <option value="low">Price: Low to High</option>
+        <option value="high">Price: High to Low</option>
+      </select>
+    </div>
+
+    <div class="cards"></div>
+
+
+
+   
+    <!-- <section class="collections">
       <h2>Featured Collections</h2>
       <div class="collection-grid">
         <div class="collection-card">Adventure Wear</div>
@@ -82,27 +129,20 @@
       <a href="#" class="filter-link">Filter</a>
     </div>
 
-    <section class="shop">
-      <h2>Shop Collection</h2>
-      <div class="shop-grid">
-        <div class="product-card">
-          <h3>Adventure Trek Jacket</h3>
-          <p>$199.99</p>
-          <button>Add to Cart</button>
-        </div>
-        <div class="product-card">
-          <h3>Urban Nomad Backpack</h3>
-          <p>$149.99</p>
-          <button>Add to Cart</button>
-        </div>
-        <div class="product-card">
-          <h3>City Stretch Chinos</h3>
-          <p>$119.99</p>
-          <button>Add to Cart</button>
-        </div>
-        <!-- Add more product-cards as needed -->
-      </div>
-    </section>
+
+-->
+  <section class="join">
+  <h1>Join the Nomad community</h1>
+  <p>Get exclusive offers, travel tips, and style inspiration.</p>
+  <div class="form-row">
+    <input type="email" id="email" name="email" placeholder="Email">
+    <button type="subscribe">Subscribe</button>
+  </div>
+</section>
+
+
+    
+
 
     <footer>
       <div class="footer-columns">
@@ -135,6 +175,9 @@
       <div class="footer-bottom">
         <p>&copy; 2025 Nomad Fits. All rights reserved.</p>
       </div>
+
+       <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+       <script src="js/index.js"></script>
     </footer>
   </body>
 </html>

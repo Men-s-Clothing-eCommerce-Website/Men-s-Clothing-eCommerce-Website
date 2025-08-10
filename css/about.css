@@ -5,14 +5,14 @@
 }
 
 body {
- font-family: "Roboto", sans-serif;
+  font-family: "Roboto", sans-serif;
   margin: 0 auto;
   max-width: 1600px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: aliceblue;
+  background-color: white;
 }
 
 .navbar {
@@ -45,4 +45,168 @@ body {
 
 .nav-links a:hover {
   color: #007bff;
+}
+
+
+
+
+
+.section {
+  padding: 40px 20px;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.title {
+  max-width: 700px;
+  margin: 0 auto 60px; 
+  text-align: center;
+}
+
+.title h1 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  font-weight: 700;
+  color: #222;
+}
+
+.title p {
+  font-size: 1.125rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+
+.content-section {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.content {
+  flex: 1 1 400px;
+  max-width: 600px;
+  color: #444;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.content h3 {
+  font-size: 1.75rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: #222;
+}
+
+.content p {
+  margin-bottom: 16px;
+}
+
+.image-section {
+  flex: 1 1 400px;
+  max-width: 600px;
+  text-align: center;
+}
+
+.image-section img {
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+
+
+
+
+/* TEAM SECTION  */
+
+
+.team-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  background: white;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.team-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  font-weight: 700;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.team-members-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px; 
+  margin-bottom: 60px;
+}
+
+
+.group-member {
+  background-color: #fff;
+  padding: 20px;
+  flex: 1 1 280px; 
+  max-width: 280px;
+  border-radius: 16px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  box-sizing: border-box;
+  min-width: 220px; 
+}
+
+
+
+.group-member img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  object-fit: cover;
+  background-color: transparent;
+  border: 3px solid #ddd;
+}
+
+.group-member h3 {
+  font-size: 1.375rem;
+  margin: 10px 0 6px;
+  font-weight: 700;
+  color: #333;
+}
+
+.group-member h5 {
+  font-size: 0.875rem;
+  margin: 0;
+  font-weight: 700;
+  color: #777;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.group-member p {
+  font-size: 1rem;
+  margin-top: 12px;
+  line-height: 1.5;
+  color: #555;
+}
+
+
+@media (max-width: 480px) {
+  .group-member {
+    flex-basis: 100%;
+    max-width: 100%;
+    min-width: unset;
+  }
 }
