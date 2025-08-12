@@ -32,10 +32,10 @@ function createCard(product) {
   price.textContent = `$${product.price.toFixed(2)}`;
   card.appendChild(price);
 
-const description = document.createElement("p");
-description.className = "description";  // <-- THIS IS IMPORTANT
-description.textContent = product.description;
-card.appendChild(description);
+ const description = document.createElement("p");
+  description.className = "description";  
+  description.textContent = product.description;
+  card.appendChild(description);
 
 
   const rating = document.createElement("p");
@@ -77,3 +77,15 @@ card.appendChild(description);
 
     displayAllProducts();
     filteringCategories();
+
+
+
+
+     /*const priseMake = document.getElementById("Price");
+     
+    if (priceSort === "low") {
+    filtered = filtered.slice().sort((a, b) => a.price - b.price);
+  } else if (priceSort === "high") {
+    filtered = filtered.slice().sort((a, b) => b.price - a.price);
+  }
+*/

@@ -55,6 +55,7 @@ i {
 
 
 
+
 /* ================Hero section =================== */
 .hero {
   color: #f8f9fa;
@@ -104,6 +105,10 @@ i {
 .main img {
   width: 200;
   height: 300px;
+
+
+
+
 }
 .featured-title {
   margin: 5px 5px;

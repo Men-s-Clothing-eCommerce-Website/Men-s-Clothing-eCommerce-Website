@@ -9,7 +9,7 @@ function fetchProductData(id) {
 
 function createProductDetails(product) {
   const container = document.createElement("div");
-  container.className = "product-details-container";
+  container.className = "container";
 
   const imgDiv = document.createElement("div");
   imgDiv.className = "product-image";
@@ -19,31 +19,95 @@ function createProductDetails(product) {
   imgDiv.appendChild(img);
   container.appendChild(imgDiv);
 
+
+  const productdetailsdiv = document.createElement("div")
+  productdetailsdiv.className =  "productdetailsdiv"
+  container.appendChild(productdetailsdiv)
+
+
+
   const title = document.createElement("h2");
   title.textContent = product.title;
-  container.appendChild(title);
+ productdetailsdiv.appendChild(title);
 
   const price = document.createElement("p");
   price.className = "product-price";
   price.textContent = `$${product.price.toFixed(2)}`;
-  container.appendChild(price);
+  productdetailsdiv.appendChild(price);
+
+
+  const titledescription = document.createElement("h3")
+   titledescription.textContent = "Description"
+   productdetailsdiv.appendChild(titledescription)
+   
+
 
   const description = document.createElement("p");
   description.className = "product-description";
   description.textContent = product.description;
-  container.appendChild(description);
+  productdetailsdiv.appendChild(description);
 
   const rating = document.createElement("p");
   rating.textContent = `Rating: ${product.rating?.rate || 'N/A'}`;
-  container.appendChild(rating);
+ productdetailsdiv.appendChild(rating);
+
+
+   const quantity = document.createElement("div")
+   quantity.className = "quantity"
+   productdetailsdiv.appendChild(quantity)
+
+
+  const quantitytitle = document.createElement("h3")
+  quantitytitle.textContent = "Quantity"
+  quantity.appendChild( quantitytitle)
+
+  
+
+  const numberdiv = document.createElement("div")
+  numberdiv.className = "numberdiv"
+  quantity.appendChild(numberdiv)
+
+
+
+  const minus = document.createElement("button")
+  minus.textContent = "-"
+  numberdiv.appendChild(minus)
+
+  let count = 1
+ 
+const number = document.createElement("span")
+   number.textContent = count
+   numberdiv.appendChild(number) 
+
+  const plus = document.createElement("button")
+  plus.textContent = "+"
+  numberdiv.appendChild(plus)
+
+  
+  
+
+   minus.addEventListener("click",()=> {
+   count--
+    number.textContent = count
+   })
+   
+    plus.addEventListener("click",()=> {
+   count++
+    number.textContent = count
+   })
+
+  
+   
 
   const btn = document.createElement("button");
   btn.id = "add-to-cart-btn";
   btn.textContent = "Add to Cart";
+  
   btn.addEventListener("click", () => {
-    alert(`Added "${product.title}" to cart! (Functionality not implemented)`);
+    alert(`Added "${product.title}" to cart! (number of products: ${count} product)`);
+    location.assign("all-products.html");
   });
-  container.appendChild(btn);
+  productdetailsdiv.appendChild(btn);
 
   return container;
 }
