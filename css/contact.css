@@ -6,7 +6,6 @@
 }
 
 body {
-<<<<<<< HEAD
   font-family: "Roboto", sans-serif;
   margin: 0 auto;
   max-width: 1200px;
@@ -56,14 +55,6 @@ body {
 
 .contact {
   margin-top: 30px;
-=======
-  display: flex;
-  font-family: arial, sans-serif;
-  height: 100%;
-  color: #fff;
-}
-.contact {
->>>>>>> 795addb4d8575883d5104040d9c4d868b5d13b1a
   flex-grow: 1;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -214,8 +205,6 @@ textarea {
   height: 50px;
   padding: 15px;
   border-radius: 3px;
-<<<<<<< HEAD
-=======
 }
 .l {
   font-size: x-large;
@@ -275,7 +264,6 @@ textarea {
   .personal-infomation {
     flex-direction: column;
   }
->>>>>>> 795addb4d8575883d5104040d9c4d868b5d13b1a
 }
 .l {
   font-size: x-large;

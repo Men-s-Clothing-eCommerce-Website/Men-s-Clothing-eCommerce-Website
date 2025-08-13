@@ -19,7 +19,6 @@
         <a href="index.html">Home</a>
         <a href="all-products.html">Shop</a>
         <a href="about.html">About Us</a>
-        <a href="shop.html">Shop</a>
         <a href="contact.html">Contact Us</a>
       </nav>
     <div class="signup">
@@ -41,83 +40,50 @@
       <p class="hero-smalltext">
         Nomad Fits: Stylish, Comfortable & Adventure-Ready Clothing for the Modern Man
       </p>
-      <div class="hero-buttons">
-        <button>Shop Now</button>
-        <button>Explore Collections</button>
-      </div>
+     <div class="hero-buttons">
+  <a href="all-products.html" class="button">Shop Now</a>
+  <a href="index.html" class="button">Explore Collections</a>
+</div>
+
     </div>
   </section>
 
-  <!-- MAIN SECTION -->
-  <section class="main">
- 
-<div class="featured-title">
-      <h2>Featured Products
-      </h2>
-    </div>
-    <div class="featured-items">
-      <div class="adventure-wear">
-        <img src="/pics/adventure.jpg">
-        <h2>Adventure Wear</h2>
-        <p class="description">Durable & weather-ready outfits</p>
-      </div>
 
-      <div class="featured-urban">
-        <img src="/pics/urban.png">
-        <h2>Urban Streetwear</h2>
-        <p class="description">Sleek & modern city fashion</p>
-      </div>
-
-      <div class="featured-travel">
-        <img src="/pics/travel.jpg">
-        <h2><i class="fa-solid fa-plane-departure"></i> <br>
-          Travel Essentials</h2>
-        <p class="description">Lightweight, packable styles</p>
-      </div>
-
-      <div class="featured-winter">
-        <img src="/pics/winter.jpg">
-        <h2>Winter Nomad</h2>
-        <p class="description">Layered, rugged fits for the cold</p>
-      </div>
-    </div>
-  
-    <div class="main-buttons">
-<div classname="button title">
-      <h4>Shop Collections</h4>
-</div>
-      
-      <div class="dropdown-categories">
-        <select class="dropdown-trigger">Select a 
-
-        <option="dropdown-item">Pants</option>
-        <option="dropdown-item">Shirts</option>
-        <option class="dropdown-item">Shoes</option>
-        <option class="dropdown-item">Accessories</option>
-      </div>
-
+ <div class="cardss"></div>
      
-      <select class="dropdown-featured">
-        <option class="dropdown-item">Featured Items</option>
-        <option class="dropdown-item">On Sale</option>
-        <option class="dropdown-item">New Arrivals</option>
+     
+
+
+<div class="filtering">
+      <select id="Categories">
+        <option value="all">All Categories</option>
       </select>
 
-      <div class="collection-display">
-        <div>Item 1</div>
-        <div>Item 2</div>
-        <div>Item 3</div>
-      </div>
-      <div class="collection-display2">
-        <div>Item 4</div>
-        <div>Item 5</div>
-        <div>Item 6</div>
-      </div>
+      <select id="featured">
+        <option value="all">Featured</option>
+        <option value="new">New Arrivals</option>
+        <option value="best">Bestsellers</option>
+        <option value="sale">On Sale</option>
+      </select>
+
+      <select id="Price">
+        <option value="all">Filters</option>
+        <option value="low">Price: Low to High</option>
+        <option value="high">Price: High to Low</option>
+      </select>
     </div>
-  </section>
+
+    <div class="cardHome"></div>
+
+
+
+
+
+
 
   <!-- FOOTER -->
   <footer>
+      <a href="#top" class="back-to-top">Back to Top</a>
     <div class="footer-navbar">
       <div>
       <h3>Join the Nomad Community</h3>

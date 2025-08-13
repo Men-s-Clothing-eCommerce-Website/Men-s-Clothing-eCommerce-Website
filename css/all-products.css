@@ -1,4 +1,4 @@
-/* full Styles */
+
 * {
   margin: 0;
   padding: 0;
@@ -7,18 +7,18 @@
 
 body {
   font-family: "Roboto", sans-serif;
+  max-width: 1400px;
   margin: 0 auto;
-  max-width: 1200px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: white;
+  background-color: #fff;
 }
 
-
-
-/* Navbar */
+/* ==============================
+   Navbar
+============================== */
 .navbar {
   width: 100%;
   display: flex;
@@ -46,24 +46,25 @@ body {
   text-decoration: none;
   color: #333;
   font-weight: 500;
+  transition: color 0.3s;
 }
 
 .nav-links a:hover {
   color: #007bff;
 }
 
-
-
-/* Hero Section */
+/* ==============================
+   Hero Section
+============================== */
 .hero {
   width: 100%;
   height: 200px;
-  background-color: #201D33;
+  background-color: #201d33;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: #fff;
   text-align: center;
   padding: 2rem 1rem;
 }
@@ -79,105 +80,111 @@ body {
   max-width: 600px;
 }
 
-
+/* ==============================
+   Filtering Controls
+============================== */
 .filtering {
   display: flex;
-  gap: 10px;
   flex-wrap: wrap;
+  gap: 10px;
   margin: 20px auto;
   width: 100%;
   max-width: 1200px;
 }
 
-#Categories {
-margin: right;
-}
-
-#featured {
-  margin: right;
-}
-
+#Categories,
+#featured,
 #Price {
-  margin-left: auto;
+  padding: 5px 10px;
 }
 
-
-
+/* ==============================
+   Product Cards
+============================== */
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 24px;
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  width: 100%;
 }
 
 .card {
-  transition: transform 0.3s ease;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
-  overflow: hidden;
+  position: relative;
   display: flex;
   flex-direction: column;
-  padding: 0;              /* No padding for full image width */
-  box-sizing: border-box;
- 
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
 }
 
 .card:hover {
-  transform: translateY(-5px);
+  transform: scale(1.05);
 }
 
+/* Card Image */
 .card img {
   width: 100%;
   height: 220px;
   object-fit: cover;
-  display: block; 
- 
+  display: block;
 }
 
+/* Card Text */
 .card h3 {
   font-size: 1.1rem;
   margin: 0.75rem;
   color: #333;
-  flex-shrink: 0;
 }
 
 .card p {
   font-size: 0.9rem;
   margin: 0.4rem 0.75rem;
   color: #666;
-  flex-shrink: 0;
 }
 
+/* First paragraph bold (price) */
 .card p:nth-of-type(1) {
   font-weight: bold;
   color: #1a73e8;
 }
 
-
+/* Description truncate */
 .card .description {
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
-  margin: 0.4rem 0.75rem;
-  color: #666;
-  font-size: 0.9rem;
   line-height: 1.2em;
-  max-height: 2.4em;     
-  white-space: normal;
+  max-height: 2.4em;
 }
 
-.card .rating {
-  color: #ff9800;
-  font-weight: bold;
-  margin-bottom: 0.75rem;
-  flex-shrink: 0;
+/* Quick Preview Button */
+.quick-preview {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  padding: 5px 10px;
+  display: none;
+  transition: opacity 0.3s;
 }
 
+.card:hover .quick-preview {
+  display: block;
+}
+
+/* ==============================
+   Products Grid (Extra)
+============================== */
 .products {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -191,7 +198,9 @@ margin: right;
   background-color: #f9f9f9;
 }
 
-/* Responsive tweaks */
+/* ==============================
+   Responsive
+============================== */
 @media screen and (max-width: 400px) {
   .card img {
     height: 180px;
@@ -208,4 +217,39 @@ margin: right;
   .hero p {
     font-size: 0.85rem;
   }
+}
+
+
+
+
+html {
+  scroll-behavior: smooth; /* Smooth scroll everywhere */
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #201d33;
+  color: white;
+  font-size: 18px;
+  padding: 12px 15px;
+  border-radius: 50%;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s, transform 0.3s;
+  z-index: 999;
+}
+
+.back-to-top:hover {
+  background-color: #201d33;
+  transform: translateY(-3px);
+}
+
+.back-to-top.show {
+  opacity: 1;
+  pointer-events: auto;
 }
