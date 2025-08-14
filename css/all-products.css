@@ -1,33 +1,27 @@
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+
 body {
-  font-family: "Roboto", sans-serif;
-  max-width: 1400px;
+  font-family: "Arrial", sans-serif;
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: #fff;
+  max-width: 1200px;
 }
 
-/* ==============================
-   Navbar
-============================== */
+/* HEADER/NAV BAR section CSS */
 .navbar {
-  width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 10px 3px;
+  color: #3a3837;
   background-color: #fff;
   border-bottom: 1px solid #ddd;
+  position: relative;
 }
 
 .logo {
@@ -36,22 +30,23 @@ body {
   color: #3a3837;
 }
 
-.nav-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
+i {
+  color: #8b7d76;
 }
+
+
 
 .nav-links a {
   text-decoration: none;
-  color: #333;
-  font-weight: 500;
-  transition: color 0.3s;
+  font-size: 1rem;
+  color: #3a3837;
+  margin-left: 15px;
+}
+.nav-links a:hover {
+  color: #cac2bd;
 }
 
-.nav-links a:hover {
-  color: #007bff;
-}
+
 
 /* ==============================
    Hero Section
@@ -106,7 +101,7 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 24px;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
@@ -222,30 +217,27 @@ body {
 
 
 
-html {
-  scroll-behavior: smooth; /* Smooth scroll everywhere */
-}
+
+
+html { scroll-behavior: smooth; }
 
 .back-to-top {
   position: fixed;
-  bottom: 30px;
-  right: 30px;
-  background-color: #201d33;
-  color: white;
+  bottom: 20px;
+  right: 20px;
+  background: #201d33;
+  color: #fff;
   font-size: 18px;
-  padding: 12px 15px;
+  padding: 10px;
   border-radius: 50%;
-  text-align: center;
-  text-decoration: none;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.3);
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.3s, transform 0.3s;
+  transition: 0.3s;
   z-index: 999;
 }
 
 .back-to-top:hover {
-  background-color: #201d33;
   transform: translateY(-3px);
 }
 
@@ -253,3 +245,106 @@ html {
   opacity: 1;
   pointer-events: auto;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+footer {
+  background-color: #151722;
+  color: white;
+  text-align: left;
+  padding: 15px 150px;
+  margin-top: 30px;
+}
+
+footer i {
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  padding-top: 15px;
+}
+
+.footer-navbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 10px 10px;
+  border-bottom: 0.1px solid #898a8a;
+}
+
+footer p {
+  color: #aaaeb1;
+  font-size: 100;
+  line-height: 1.6;
+}
+.social-media. {
+  color: white;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: column;
+  justify-content: space-between;
+  padding: 50px 10px;
+  margin: 10px 0;
+  border-bottom: 0.1px solid #898a8a;
+}
+.quick-links {
+  line-height: 1.6;
+}
+.help {
+  line-height: 1.6;
+}
+
+.contact {
+  line-height: 1.6;
+}
+.footer-bottom {
+  display: flex;
+  flex-wrap: column;
+  justify-content: space-between;
+  padding: 5px 10px;
+  margin-top: 5px;
+}
+
+footer a {
+  text-decoration: none;
+  font-size: 1rem;
+  color: #aaaeb1;
+  margin-left: 15px;
+}
+
+footer a:hover {
+  color: #cac2bd;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -26,6 +26,10 @@ function createCategoryCard(product) {
   price.textContent = `$${product.price.toFixed(2)}`;
   cardCategory.appendChild(price);
 
+  const category = document.createElement("p");
+  category.textContent = `Category: ${product.category || 'N/A'}`;
+  cardCategory.appendChild(category);
+
   return cardCategory;
 }
 
@@ -123,52 +127,14 @@ function createCard(product) {
   return card;
 }
 
-// Display products (limit 6 for homepage)
-function displayAllProducts(category = "all", price = "all", featured = "all", limit = 6) {
+function displayAllProducts(limit = 6) {
   const cardsContainer = document.querySelector(".cardHome");
 
   fetchProductData().then(products => {
-    const productsWithFeatured = products.map((p, i) => ({
-      ...p,
-      featured: i % 3 === 0 ? "new" : (i % 3 === 1 ? "best" : "")
-    }));
-
-    let filtered = productsWithFeatured
-      .filter(p => category === "all" || p.category === category)
-      .filter(p => featured === "all" || p.featured === featured);
-
-    if (price === "low") filtered.sort((a, b) => a.price - b.price);
-    if (price === "high") filtered.sort((a, b) => b.price - a.price);
-
-    if (limit) filtered = filtered.slice(0, limit);
-
+    let displayed = limit ? products.slice(0, limit) : products;
     cardsContainer.innerHTML = "";
-    cardsContainer.append(...filtered.map(createCard));
+    cardsContainer.append(...displayed.map(createCard));
   });
 }
 
-function filteringCategories() {
-  const categories = document.getElementById("Categories");
-
-  fetchProductData().then(products => {
-    [...new Set(products.map(p => p.category))].forEach(c => {
-      const option = document.createElement("option");
-      option.value = c;
-      option.textContent = c;
-      categories.appendChild(option);
-    });
-  });
-}
-
-["Categories", "Price", "featured"].forEach(id => {
-  document.getElementById(id).addEventListener("change", () => {
-    const category = document.getElementById("Categories").value;
-    const price = document.getElementById("Price").value;
-    const featured = document.getElementById("featured").value;
-
-    displayAllProducts(category, price, featured, null);
-  });
-});
-
-filteringCategories();
 displayAllProducts();
