@@ -4,47 +4,46 @@
   box-sizing: border-box;
 }
 
+
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: "Arrial", sans-serif;
   margin: 0 auto;
   max-width: 1200px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: white;
 }
 
+/* HEADER/NAV BAR section CSS */
 .navbar {
- width: 100%;
- display: flex;
+  display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 10px 3px;
+  color: #3a3837;
   background-color: #fff;
   border-bottom: 1px solid #ddd;
+  position: relative;
 }
 
 .logo {
-  font-size: 1.5rem;
-  font-weight: 700;
+  font-weight: bold;
+  font-size: 20px;
+  color: #3a3837;
 }
 
-.nav-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
+i {
+  color: #8b7d76;
 }
+
+
 
 .nav-links a {
   text-decoration: none;
-  color: #333;
-  font-weight: 500;
+  font-size: 1rem;
+  color: #3a3837;
+  margin-left: 15px;
 }
-
 .nav-links a:hover {
-  color: #007bff;
+  color: #cac2bd;
 }
 
 
@@ -209,4 +208,74 @@ body {
     max-width: 100%;
     min-width: unset;
   }
+}
+
+
+footer {
+  background-color: #151722;
+  color: white;
+  text-align: left;
+  padding: 15px 150px;
+  margin-top: 30px;
+}
+
+footer i {
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  padding-top: 15px;
+}
+
+.footer-navbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 10px 10px;
+  border-bottom: 0.1px solid #898a8a;
+}
+
+footer p {
+  color: #aaaeb1;
+  font-size: 100;
+  line-height: 1.6;
+}
+.social-media. {
+  color: white;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: column;
+  justify-content: space-between;
+  padding: 50px 10px;
+  margin: 10px 0;
+  border-bottom: 0.1px solid #898a8a;
+}
+.quick-links {
+  line-height: 1.6;
+}
+.help {
+  line-height: 1.6;
+}
+
+.contact {
+  line-height: 1.6;
+}
+.footer-bottom {
+  display: flex;
+  flex-wrap: column;
+  justify-content: space-between;
+  padding: 5px 10px;
+  margin-top: 5px;
+}
+
+footer a {
+  text-decoration: none;
+  font-size: 1rem;
+  color: #aaaeb1;
+  margin-left: 15px;
+}
+
+footer a:hover {
+  color: #cac2bd;
 }

@@ -1,16 +1,14 @@
+// Fetch all products
 function fetchProductData() {
   return axios.get('https://fakestoreapi.com/products')
-    .then(response => {
-      console.log("Products:", response.data);
-      return response.data;
-    })
+    .then(response => response.data)
     .catch(error => {
       console.error("Fetch error:", error);
       return [];
     });
 }
 
-
+// Create a product card
 function createCard(product) {
   const card = document.createElement("div");
   card.className = "card";
@@ -20,7 +18,7 @@ function createCard(product) {
   });
 
   const img = document.createElement("img");
-  img.src = product.image || '';
+  img.src = product.image;
   img.alt = product.title;
   card.appendChild(img);
 
@@ -32,60 +30,95 @@ function createCard(product) {
   price.textContent = `$${product.price.toFixed(2)}`;
   card.appendChild(price);
 
- const description = document.createElement("p");
-  description.className = "description";  
+  const description = document.createElement("p");
+  description.className = "description";
   description.textContent = product.description;
   card.appendChild(description);
-
 
   const rating = document.createElement("p");
   rating.textContent = `Rating: ${product.rating?.rate || 'N/A'}`;
   card.appendChild(rating);
 
+  const category = document.createElement("p");
+  category.textContent = `Category: ${product.category || 'N/A'}`;
+  card.appendChild(category);
+
+  const quickPreview = document.createElement("button");
+  quickPreview.className = "quick-preview";
+  quickPreview.textContent = "Quick View";
+  quickPreview.style.display = "none";
+  card.appendChild(quickPreview);
+
+  card.addEventListener("mouseenter", () => {
+    quickPreview.style.display = "block";
+  });
+  card.addEventListener("mouseleave", () => {
+    quickPreview.style.display = "none";
+  });
+
   return card;
 }
 
+// Display all products with filters
+function displayAllProducts(category = "all", price = "all", featured = "all") {
+  const cardsContainer = document.querySelector(".cards");
+
+  fetchProductData().then(products => {
+    // Add demo featured property dynamically
+    const productsWithFeatured = products.map((p, i) => ({
+      ...p,
+      featured: i % 3 === 0 ? "new" : (i % 3 === 1 ? "best" : "")
+    }));
+
+    // Filter products
+    let filtered = productsWithFeatured
+      .filter(p => category === "all" || p.category === category)
+      .filter(p => featured === "all" || p.featured === featured);
+
+    // Sort by price
+    if (price === "low") filtered.sort((a, b) => a.price - b.price);
+    if (price === "high") filtered.sort((a, b) => b.price - a.price);
+
+    // Render cards
+    cardsContainer.innerHTML = "";
+    cardsContainer.append(...filtered.map(createCard));
+  });
+}
+
+// Populate category dropdown
+function filteringCategories() {
+  const categories = document.getElementById("Categories");
+
+  fetchProductData().then(products => {
+    [...new Set(products.map(p => p.category))].forEach(c => {
+      const option = document.createElement("option");
+      option.value = c;
+      option.textContent = c;
+      categories.appendChild(option);
+    });
+  });
+}
+
+// Event listeners for filters
+["Categories", "Price", "featured"].forEach(id => {
+  document.getElementById(id).addEventListener("change", () => {
+    const category = document.getElementById("Categories").value;
+    const price = document.getElementById("Price").value;
+    const featured = document.getElementById("featured").value;
+    displayAllProducts(category, price, featured);
+  });
+});
+
+// Initial load
+filteringCategories();
+displayAllProducts();
 
 
-
-
- function displayAllProducts(filterCategory = "all") {
-      const cardsContainer = document.querySelector(".cards");
-      cardsContainer.innerHTML = "";
-
-      fetchProductData().then(products => {
-        const filtered = products.filter(p => filterCategory === "all" || p.category === filterCategory);
-        cardsContainer.append(...filtered.map(createCard));
-      });
-    }
-
-    function filteringCategories() {
-      const categoryMake = document.getElementById("Categories");
-
-      fetchProductData().then(products => {
-        const uniqueCategories = [...new Set(products.map(p => p.category))];
-        uniqueCategories.forEach(category => {
-          const option = document.createElement("option");
-          option.value = category;
-          option.textContent = category;
-          categoryMake.appendChild(option);
-        });
-      });
-
-      categoryMake.addEventListener("change", e => displayAllProducts(e.target.value));
-    }
-
-    displayAllProducts();
-    filteringCategories();
-
-
-
-
-     /*const priseMake = document.getElementById("Price");
-     
-    if (priceSort === "low") {
-    filtered = filtered.slice().sort((a, b) => a.price - b.price);
-  } else if (priceSort === "high") {
-    filtered = filtered.slice().sort((a, b) => b.price - a.price);
+document.addEventListener("scroll", () => {
+  const btn = document.querySelector(".back-to-top");
+  if (window.scrollY > 300) {
+    btn.classList.add("show");
+  } else {
+    btn.classList.remove("show");
   }
-*/
+});
