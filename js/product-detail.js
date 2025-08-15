@@ -47,9 +47,10 @@ function createProductDetails(product) {
   description.textContent = product.description;
   productdetailsdiv.appendChild(description);
 
-  const rating = document.createElement("p");
-  rating.textContent = `Rating: ${product.rating?.rate || 'N/A'}`;
- productdetailsdiv.appendChild(rating);
+const rating = document.createElement("p");
+  const rate = Math.round(product.rating?.rate || 0);
+  rating.textContent = "★".repeat(rate) + "☆".repeat(5 - rate) + ` (${product.rating?.rate?.toFixed(1) || "N/A"})`;
+productdetailsdiv.appendChild(rating);
 
 
    const quantity = document.createElement("div")
@@ -102,7 +103,7 @@ const number = document.createElement("span")
   const btn = document.createElement("button");
   btn.id = "add-to-cart-btn";
   btn.textContent = "Add to Cart";
-  
+
   btn.addEventListener("click", () => {
     alert(`Added "${product.title}" to cart! (number of products: ${count} product)`);
     location.assign("all-products.html");

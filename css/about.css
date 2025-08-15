@@ -1,3 +1,4 @@
+/* body */
 * {
   margin: 0;
   padding: 0;
@@ -11,7 +12,7 @@ body {
   max-width: 1200px;
 }
 
-/* HEADER/NAV BAR section CSS */
+/* header */
 .navbar {
   display: flex;
   flex-wrap: wrap;
@@ -45,7 +46,6 @@ i {
 .nav-links a:hover {
   color: #cac2bd;
 }
-
 
 
 
@@ -211,6 +211,10 @@ i {
 }
 
 
+
+
+/* footer */
+
 footer {
   background-color: #151722;
   color: white;
@@ -278,4 +282,49 @@ footer a {
 
 footer a:hover {
   color: #cac2bd;
+}
+
+
+  @media screen and (max-width: 768px) {
+
+ .navbar {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+   
+  }
+
+  .nav-links {
+    flex-direction: column;
+ 
+    margin-top: 10px;
+  }
+
+  @media screen and (max-width: 480px) {
+
+  .navbar {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  
+  }
+
+  .nav-links {
+    flex-direction: column;
+
+    margin-top: 10px;
+  }
+
+.footer-links,
+  .footer-navbar,
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  footer {
+    padding: 15px 20px;
+  }
+
+
 }

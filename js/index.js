@@ -1,4 +1,4 @@
-// Fetch products (same as before)
+
 function fetchProductData() {
   return axios.get('https://fakestoreapi.com/products')
     .then(response => response.data)
@@ -8,32 +8,33 @@ function fetchProductData() {
     });
 }
 
-// Create a product card for categories (modified name)
+
 function createCategoryCard(product) {
   const cardCategory = document.createElement("div");
-  cardCategory.className = "card-category"; // changed class name
+  cardCategory.className = "card-category"; 
 
   const img = document.createElement("img");
   img.src = product.image;
   img.alt = product.title;
   cardCategory.appendChild(img);
 
+ 
+  const category = document.createElement("p");
+  category.textContent = product.category
+  cardCategory.appendChild(category);
+
+
   const name = document.createElement("h3");
   name.textContent = product.title;
   cardCategory.appendChild(name);
 
-  const price = document.createElement("p");
-  price.textContent = `$${product.price.toFixed(2)}`;
-  cardCategory.appendChild(price);
+  
 
-  const category = document.createElement("p");
-  category.textContent = `Category: ${product.category || 'N/A'}`;
-  cardCategory.appendChild(category);
 
   return cardCategory;
 }
 
-// Display 4 products from different categories
+
 function displayHomeCategories(limit = 4) {
   const cardsContainer = document.querySelector(".cardss");
 
@@ -52,7 +53,7 @@ function displayHomeCategories(limit = 4) {
   });
 }
 
-// Initial homepage load
+
 displayHomeCategories();
 
 
@@ -60,12 +61,6 @@ displayHomeCategories();
 
 
 
-
-
-
-
-
-// --- Second block remains exactly the same ---
 
 function fetchProductData() {
   return axios.get('https://fakestoreapi.com/products')
@@ -76,8 +71,8 @@ function fetchProductData() {
     });
 }
 
-// Create a product card
-function createCard(product) {
+
+function createCardHome(product) {
   const card = document.createElement("div");
   card.className = "card";
 
@@ -103,9 +98,10 @@ function createCard(product) {
   description.textContent = product.description;
   card.appendChild(description);
 
-  const rating = document.createElement("p");
-  rating.textContent = `Rating: ${product.rating?.rate || 'N/A'}`;
-  card.appendChild(rating);
+const rating = document.createElement("p");
+  const rate = Math.round(product.rating?.rate || 0);
+  rating.textContent = "★".repeat(rate) + "☆".repeat(5 - rate) + ` (${product.rating?.rate?.toFixed(1) || "N/A"})`;
+  card.appendChild(rating)
 
   const category = document.createElement("p");
   category.textContent = `Category: ${product.category || 'N/A'}`;
@@ -133,7 +129,7 @@ function displayAllProducts(limit = 6) {
   fetchProductData().then(products => {
     let displayed = limit ? products.slice(0, limit) : products;
     cardsContainer.innerHTML = "";
-    cardsContainer.append(...displayed.map(createCard));
+    cardsContainer.append(...displayed.map(createCardHome));
   });
 }
 

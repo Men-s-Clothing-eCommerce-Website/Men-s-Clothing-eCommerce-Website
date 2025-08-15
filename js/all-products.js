@@ -1,4 +1,4 @@
-// Fetch all products
+
 function fetchProductData() {
   return axios.get('https://fakestoreapi.com/products')
     .then(response => response.data)
@@ -35,9 +35,12 @@ function createCard(product) {
   description.textContent = product.description;
   card.appendChild(description);
 
-  const rating = document.createElement("p");
-  rating.textContent = `Rating: ${product.rating?.rate || 'N/A'}`;
-  card.appendChild(rating);
+const rating = document.createElement("p");
+  const rate = Math.round(product.rating?.rate || 0);
+  rating.textContent = "★".repeat(rate) + "☆".repeat(5 - rate) + ` (${product.rating?.rate?.toFixed(1) || "N/A"})`;
+  card.appendChild(rating)
+
+
 
   const category = document.createElement("p");
   category.textContent = `Category: ${product.category || 'N/A'}`;
@@ -59,27 +62,27 @@ function createCard(product) {
   return card;
 }
 
-// Display all products with filters
+
 function displayAllProducts(category = "all", price = "all", featured = "all") {
-  const cardsContainer = document.querySelector(".cards");
+  const cardsContainer = document.querySelector(".cards");  
 
   fetchProductData().then(products => {
-    // Add demo featured property dynamically
+  
     const productsWithFeatured = products.map((p, i) => ({
       ...p,
       featured: i % 3 === 0 ? "new" : (i % 3 === 1 ? "best" : "")
     }));
 
-    // Filter products
+    
     let filtered = productsWithFeatured
       .filter(p => category === "all" || p.category === category)
       .filter(p => featured === "all" || p.featured === featured);
 
-    // Sort by price
+    
     if (price === "low") filtered.sort((a, b) => a.price - b.price);
     if (price === "high") filtered.sort((a, b) => b.price - a.price);
 
-    // Render cards
+  
     cardsContainer.innerHTML = "";
     cardsContainer.append(...filtered.map(createCard));
   });
@@ -99,7 +102,7 @@ function filteringCategories() {
   });
 }
 
-// Event listeners for filters
+
 ["Categories", "Price", "featured"].forEach(id => {
   document.getElementById(id).addEventListener("change", () => {
     const category = document.getElementById("Categories").value;
@@ -109,7 +112,7 @@ function filteringCategories() {
   });
 });
 
-// Initial load
+
 filteringCategories();
 displayAllProducts();
 

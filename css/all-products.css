@@ -1,3 +1,4 @@
+/* body */
 * {
   margin: 0;
   padding: 0;
@@ -11,7 +12,7 @@ body {
   max-width: 1200px;
 }
 
-/* HEADER/NAV BAR section CSS */
+/* header */
 .navbar {
   display: flex;
   flex-wrap: wrap;
@@ -47,10 +48,8 @@ i {
 }
 
 
+/* herro sectin */
 
-/* ==============================
-   Hero Section
-============================== */
 .hero {
   width: 100%;
   height: 200px;
@@ -75,9 +74,8 @@ i {
   max-width: 600px;
 }
 
-/* ==============================
-   Filtering Controls
-============================== */
+/* filtering section */
+
 .filtering {
   display: flex;
   flex-wrap: wrap;
@@ -93,9 +91,8 @@ i {
   padding: 5px 10px;
 }
 
-/* ==============================
-   Product Cards
-============================== */
+/* all products shop card */
+
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -104,6 +101,7 @@ i {
   max-width: 1100px;
   margin: 0 auto;
 }
+ 
 
 .card {
   position: relative;
@@ -120,7 +118,7 @@ i {
   transform: scale(1.05);
 }
 
-/* Card Image */
+
 .card img {
   width: 100%;
   height: 220px;
@@ -128,7 +126,7 @@ i {
   display: block;
 }
 
-/* Card Text */
+
 .card h3 {
   font-size: 1.1rem;
   margin: 0.75rem;
@@ -141,13 +139,13 @@ i {
   color: #666;
 }
 
-/* First paragraph bold (price) */
+
 .card p:nth-of-type(1) {
   font-weight: bold;
   color: #1a73e8;
 }
 
-/* Description truncate */
+
 .card .description {
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -158,7 +156,7 @@ i {
   max-height: 2.4em;
 }
 
-/* Quick Preview Button */
+
 .quick-preview {
   position: absolute;
   bottom: 10px;
@@ -177,9 +175,7 @@ i {
   display: block;
 }
 
-/* ==============================
-   Products Grid (Extra)
-============================== */
+
 .products {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -193,31 +189,13 @@ i {
   background-color: #f9f9f9;
 }
 
-/* ==============================
-   Responsive
-============================== */
-@media screen and (max-width: 400px) {
-  .card img {
-    height: 180px;
-  }
-
-  .hero {
-    padding: 1rem;
-  }
-
-  .hero h1 {
-    font-size: 1.25rem;
-  }
-
-  .hero p {
-    font-size: 0.85rem;
-  }
-}
 
 
 
 
 
+
+/* batanka yar ee si fudud page kor imaanayo */
 
 html { scroll-behavior: smooth; }
 
@@ -255,7 +233,7 @@ html { scroll-behavior: smooth; }
 
 
 
-
+/* footer */
 
 footer {
   background-color: #151722;
@@ -332,12 +310,79 @@ footer a:hover {
 
 
 
+  @media screen and (max-width: 768px) {
+
+ .navbar {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+   
+  }
+
+  .nav-links {
+    flex-direction: column;
+ 
+    margin-top: 10px;
+  }
+  .cards {
+  display: flex;
+  flex-direction: column;
+}
+
+
+  .card img {
+    height: 300px;
+    width: 100%;
+    object-fit: contain;
+  }
 
 
 
 
+  .hero {
+    padding: 1rem;
+  }
+
+  .hero h1 {
+    font-size: 1.25rem;
+  }
+
+  .hero p {
+    font-size: 0.85rem;
+  }
+
+.footer-links,
+  .footer-navbar,
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  footer {
+    padding: 15px 20px;
+  }
 
 
+
+}
+
+
+
+  @media screen and (max-width: 480px) {
+
+  .navbar {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  
+  }
+
+  .nav-links {
+    flex-direction: column;
+
+    margin-top: 10px;
+  }
+}
 
 
 

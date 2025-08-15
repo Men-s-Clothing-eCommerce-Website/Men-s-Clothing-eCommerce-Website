@@ -1,3 +1,4 @@
+/* body */
 * {
   margin: 0;
   padding: 0;
@@ -11,7 +12,7 @@ body {
   max-width: 1200px;
 }
 
-/* HEADER/NAV BAR section CSS */
+/* header */
 .navbar {
   display: flex;
   flex-wrap: wrap;
@@ -47,7 +48,7 @@ i {
 }
 
 
-
+/* contact sectin */
 
 .contacts {
   flex-grow: 1;
@@ -248,24 +249,12 @@ textarea {
   padding-right: 5px;
 }
 
-@media screen and (max-width: 500px) {
-  .contact {
-    display: flex;
-    flex-direction: column;
-  }
-}
-
-@media screen and (max-width: 450px) {
-  .personal-infomation {
-    flex-direction: column;
-  }
-}
 
 
 
 
 
-/*=================== FOOTER CSS =================== */
+
 footer {
   background-color: #151722;
   color: white;
@@ -280,7 +269,7 @@ footer {
   max-width: 800px;
   margin: 0 auto;
   flex-wrap: wrap;
-  padding: 20px 0; /* spacing above/below form */
+  padding: 20px 0; 
  border-bottom: 0.1px solid #898a8a;
 }
 
@@ -332,29 +321,41 @@ footer {
   background-color: #570df6;
 }
 
-@media (max-width: 600px) {
-  .footer-content {
-    flex-direction: column;
-    align-items: flex-start;
-  }
 
-  .subscribe-form {
-    margin-top: 10px;
-  }
+
+
+
+footer {
+  background-color: #151722;
+  color: white;
+  text-align: left;
+  padding: 15px 150px;
+  margin-top: 30px;
 }
 
-
-
-
-
+footer i {
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  padding-top: 15px;
+}
 
 .footer-navbar {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 10px 10px;
-  border-top: 0.1px solid #898a8a;
+  border-bottom: 0.1px solid #898a8a;
 }
+
+.comform {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 10px 10px;
+  border-bottom: 0.1px solid #898a8a;
+}
+
 
 footer p {
   color: #aaaeb1;
@@ -400,4 +401,100 @@ footer a {
 
 footer a:hover {
   color: #cac2bd;
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 500px) {
+  .contacts {
+    display: flex;
+    flex-direction: column;
+  }
+
+.contact-information {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+}
+
+
+.visit  {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+}
+
+
+
+.social-br {
+  display: flex;
+  
+  text-align: center;
+  justify-content: center;
+}
+
+
+
+
+}
+
+
+
+
+
+@media screen and (max-width: 450px) {
+  .personal-infomation {
+    flex-direction: column;
+  }
+}
+
+
+
+  @media screen and (max-width: 768px) {
+
+ .navbar {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+   
+  }
+
+  .nav-links {
+    flex-direction: column;
+ 
+    margin-top: 10px;
+  }
+
+  @media screen and (max-width: 480px) {
+
+  .navbar {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  
+  }
+
+  .nav-links {
+    flex-direction: column;
+
+    margin-top: 10px;
+  }
+
+.footer-links,
+  .footer-navbar,
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  footer {
+    padding: 15px 20px;
+  }
+
 }
