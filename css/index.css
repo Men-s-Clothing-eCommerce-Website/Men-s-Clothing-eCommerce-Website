@@ -1,4 +1,4 @@
-/* EVERY THING CSS */
+/* body */
 * {
   margin: 0;
   padding: 0;
@@ -12,7 +12,7 @@ body {
   max-width: 1200px;
 }
 
-/* HEADER/NAV BAR section CSS */
+/* header */
 .navbar {
   display: flex;
   flex-wrap: wrap;
@@ -49,8 +49,8 @@ i {
 
 
 
+/* herro */
 
-/* ================Hero section =================== */
 .hero {
   color: #f8f9fa;
   text-align: center;
@@ -78,7 +78,7 @@ i {
   display: inline-block;
   padding: 10px 20px;
   margin: 5px;
-  background-color: transparent;
+  background-color: white;
   color: black;
   text-decoration: none;
   border-radius: 5px;
@@ -98,21 +98,22 @@ i {
   text-decoration: none;
   border-radius: 5px;
   text-align: center;
-  border-bottom: 2px solid white;
-  border-top: 2px solid white;
+  border: 2px solid white;
+  
 }
 
 
 .hero-buttons .button:hover {
-  background-color: white;
+  background-color: #201d33;
+  color: white;
 }
 
 .hero-buttons .buttona:hover {
-  background-color: rgb(13, 66, 241);
+  background-color: rgb(59, 80, 57);
 }
 
 
-
+/* categrory */
 .titleCategory {
   text-align: center;
 }
@@ -128,7 +129,7 @@ i {
 }
 
 
-
+/* card category */
 .cardss {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -138,16 +139,20 @@ i {
   margin: 0 auto;
   margin-top: 50px;
   margin-bottom: 50px;
+  color: white;
 }
 
 .card-category {
-  background-color: white;
+  position: relative; 
+  background-color: rgb(111, 106, 106);
+  color: white;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   width: 240px;
-  padding: 15px;
-  text-align: center;
+  padding: 15px 20px ;
+  height: 250px;
   transition: transform 0.2s;
+  overflow: hidden; 
 }
 
 .card-category:hover {
@@ -155,24 +160,46 @@ i {
 }
 
 .card-category img {
+ display: block;
   width: 100%;
-  height: 150px;
-  object-fit: contain;
-  margin-bottom: 10px;
+  height: auto;
 }
 
+.card-category p,
 .card-category h3 {
-  font-size: 16px;
-  margin: 10px 0;
+  position: absolute; 
+  bottom: 0; 
+  color: #f1f1f1; 
+  width: 100%;
+  transition: .5s ease;
+  opacity:1;
+  color: white;
+  font-size: 20px;
+  padding: 20px;
+  text-align: center;
+  
 }
 
 .card-category p {
-  font-size: 14px;
-  color: #333;
-  font-weight: bold;
+  font-size: 20px;
+  margin: 50px 0;
+  color: white;
+
+}
+
+.card-category h3 {
+   display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 10px;
+   color: rgb(196, 196, 196);
 }
 
 
+
+/* tranding now */
 
 .titleTranding {
 padding-left: 60px;
@@ -192,6 +219,8 @@ font: bold;
 
 
 
+/* tranding card */
+
 .cardHome {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -203,10 +232,8 @@ font: bold;
 
 .card {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  height: 400px;
-  margin-top: 10px;
+ 
+  
   background: #fff;
   border-radius: 8px;
   overflow: hidden;
@@ -252,6 +279,15 @@ font: bold;
   max-height: 2.4em;
 }
 
+.card rating {
+  color: #FFD700; /* gold stars */
+  font-size: 14px;
+  margin: 5px 0 0 0;
+}
+
+
+
+
 .quick-preview {
   position: absolute;
   bottom: 10px;
@@ -270,57 +306,12 @@ font: bold;
   display: block;
 }
 
-/* ==============================
-   Responsive
-============================== */
-@media screen and (max-width: 768px) {
-  .hero {
-    height: auto;
-    padding: 1.5rem 1rem;
-  }
 
-  .hero h1 {
-    font-size: 1.5rem;
-  }
 
-  .hero p {
-    font-size: 0.95rem;
-  }
 
-  .cards {
-    gap: 16px;
-  }
-}
 
-@media screen and (max-width: 400px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 1rem;
-  }
 
-  .nav-links {
-    flex-direction: column;
-    width: 100%;
-    gap: 0.75rem;
-    text-align: center;
-  }
-
-  .hero h1 {
-    font-size: 1.25rem;
-  }
-
-  .hero p {
-    font-size: 0.85rem;
-  }
-
-  .card img {
-    height: 180px;
-  }
-
- 
-}
-
+/* footer */
 
 
 footer {
@@ -391,3 +382,110 @@ footer a {
 footer a:hover {
   color: #cac2bd;
 }
+
+
+
+
+/* responsive */
+@media screen and (max-width: 992px) {
+  .hero {
+    padding: 150px 20px; 
+  }
+
+  .cardHome,
+  .cardss {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .navbar {
+    flex-wrap: wrap;
+  }
+
+  .footer-links,
+  .footer-navbar,
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  footer {
+    padding: 15px 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+
+ .navbar {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+   
+  }
+
+  .nav-links {
+    flex-direction: column;
+    margin-top: 10px;
+  }
+
+  .hero {
+    padding: 100px 15px;
+  }
+
+  .hero-text {
+    font-size: 2rem;
+  }
+
+  .hero-smalltext {
+    font-size: 1rem;
+  }
+
+  .card-category,
+  .card {
+    width: 100%;
+  }
+  
+}
+
+@media screen and (max-width: 480px) {
+
+  .navbar {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  
+  }
+
+  .nav-links {
+    flex-direction: column;
+
+    margin-top: 10px;
+  } 
+
+  .hero {
+    padding: 60px 10px;
+  }
+
+  .hero-text {
+    font-size: 1.5rem;
+  }
+
+  .hero-smalltext {
+    font-size: 0.9rem;
+  }
+
+   .cardss {
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+
+  .card img {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+
+  }
+}
+

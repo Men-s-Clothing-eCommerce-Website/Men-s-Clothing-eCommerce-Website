@@ -1,3 +1,4 @@
+/* body */
 * {
   margin: 0;
   padding: 0;
@@ -11,7 +12,7 @@ body {
   max-width: 1200px;
 }
 
-/* HEADER/NAV BAR section CSS */
+/* header */
 .navbar {
   display: flex;
   flex-wrap: wrap;
@@ -61,9 +62,6 @@ i {
   border: none;
 
 }
-
-
-
 
 .product-image img {
   width: 400px;
@@ -137,4 +135,165 @@ i {
   padding: 3px 2px;
   width: 500px;
   height: 30px;
+}
+
+
+/* footer */
+
+footer {
+  background-color: #151722;
+  color: white;
+  text-align: left;
+  padding: 15px 150px;
+  margin-top: 30px;
+}
+
+footer i {
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  padding-top: 15px;
+}
+
+.footer-navbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 10px 10px;
+  border-bottom: 0.1px solid #898a8a;
+}
+
+footer p {
+  color: #aaaeb1;
+  font-size: 100;
+  line-height: 1.6;
+}
+.social-media. {
+  color: white;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: column;
+  justify-content: space-between;
+  padding: 50px 10px;
+  margin: 10px 0;
+  border-bottom: 0.1px solid #898a8a;
+}
+.quick-links {
+  line-height: 1.6;
+}
+.help {
+  line-height: 1.6;
+}
+
+.contact {
+  line-height: 1.6;
+}
+.footer-bottom {
+  display: flex;
+  flex-wrap: column;
+  justify-content: space-between;
+  padding: 5px 10px;
+  margin-top: 5px;
+}
+
+footer a {
+  text-decoration: none;
+  font-size: 1rem;
+  color: #aaaeb1;
+  margin-left: 15px;
+}
+
+footer a:hover {
+  color: #cac2bd;
+}
+
+
+  @media screen and (max-width: 768px) {
+
+ .navbar {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+   
+  }
+
+  .nav-links {
+    flex-direction: column;
+ 
+    margin-top: 10px;
+  }
+
+  .container {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 1rem;
+  }
+
+  .product-image img {
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+  }
+
+  .productdetailsdiv {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+
+  .productdetailsdiv h2 {
+    font-size: 1.5rem;
+  }
+
+  .product-price {
+    font-size: 1.2rem;
+  }
+
+  #add-to-cart-btn {
+    width: 100%;
+  }
+}
+
+
+
+
+  @media screen and (max-width: 480px) {
+
+  .navbar {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  
+  }
+
+  .nav-links {
+    flex-direction: column;
+
+    margin-top: 10px;
+  }
+
+
+
+.add-to-cart-btn {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+.footer-links,
+  .footer-navbar,
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  footer {
+    padding: 15px 20px;
+  }
+
+
 }
