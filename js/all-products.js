@@ -88,7 +88,7 @@ function displayAllProducts(category = "all", price = "all", featured = "all") {
   });
 }
 
-// Populate category dropdown
+
 function filteringCategories() {
   const categories = document.getElementById("Categories");
 
