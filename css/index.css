@@ -83,8 +83,7 @@ i {
   text-decoration: none;
   border-radius: 5px;
   text-align: center;
-    border-bottom: 2px solid white;
-  border-top: 2px solid white;
+    
 }
 
 
@@ -103,10 +102,7 @@ i {
 }
 
 
-.hero-buttons .button:hover {
-  background-color: #201d33;
-  color: white;
-}
+
 
 .hero-buttons .buttona:hover {
   background-color: rgb(59, 80, 57);
